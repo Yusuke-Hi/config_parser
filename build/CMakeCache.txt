@@ -219,7 +219,7 @@ config_parser_BINARY_DIR:STATIC=/home/yusuke/oss_dev/config_parser/build
 config_parser_IS_TOP_LEVEL:STATIC=ON
 
 //Dependencies for the target
-config_parser_LIB_DEPENDS:STATIC=general;yaml-cpp;general;yaml-cpp;
+config_parser_LIB_DEPENDS:STATIC=general;yaml-cpp;
 
 //Value Computed by CMake
 config_parser_SOURCE_DIR:STATIC=/home/yusuke/oss_dev/config_parser
