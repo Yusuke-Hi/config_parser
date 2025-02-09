@@ -11,15 +11,15 @@ include_directories(include)
 add_library(config_parser src/config_parser.cpp)
 target_link_libraries(config_parser PRIVATE yaml-cpp)
 
-add_executable(config_parser src/main.cpp)
-target_link_libraries(config_parser PRIVATE yaml-cpp)
+add_executable(config_parser_app src/main.cpp)
+target_link_libraries(config_parser_app PRIVATE config_parser)
 
 # for test
 add_executable(config_parser_test tests/config_parser_test.cpp)
-target_link_libraries((config_parser PRIVATE 
+target_link_libraries(config_parser_test PRIVATE 
         config_parser 
         GTest::GTest 
         GTest::Main 
-        yaml-cpp))   
+        yaml-cpp)
 enable_testing()
 add_test(NAME ConfigParserTest COMMAND config_parser_test)

@@ -11,10 +11,8 @@ Config load_config(const std::string& filename){
     YAML::Node config = YAML::LoadFile(filename);
 
     Config cfg;
-    cfg.host = config["database"]["host"] ? 
-        config["database"]["host"].as<std::string>(): "127.0.0.1";
-    cfg.port = config["database"]["port"] ?
-        config["database"]["host"].as<int>(): 3306;
+    cfg.host = config["database"]["host"] ? config["database"]["host"].as<std::string>(): "127.0.0.1";
+    cfg.port = config["database"]["port"] ? config["database"]["port"].as<int>(): 3306;
 
     return cfg;
 }
