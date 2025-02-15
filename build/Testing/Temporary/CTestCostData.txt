@@ -1,2 +1,2 @@
-ConfigParserTest 1 0.00387172
+ConfigParserTest 1 0.00307423
 ---

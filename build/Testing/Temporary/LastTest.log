@@ -1,10 +1,10 @@
-Start testing: Feb 15 19:45 JST
+Start testing: Feb 15 20:50 JST
 ----------------------------------------------------------
 1/1 Testing: ConfigParserTest
 1/1 Test: ConfigParserTest
 Command: "/home/yusuke/oss_dev/config_parser/build/config_parser_test"
 Directory: /home/yusuke/oss_dev/config_parser/build
-"ConfigParserTest" start time: Feb 15 19:45 JST
+"ConfigParserTest" start time: Feb 15 20:50 JST
 Output:
 ----------------------------------------------------------
 [==========] Running 3 tests from 1 test suite.
@@ -25,8 +25,8 @@ Output:
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"ConfigParserTest" end time: Feb 15 19:45 JST
+"ConfigParserTest" end time: Feb 15 20:50 JST
 "ConfigParserTest" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: Feb 15 19:45 JST
+End testing: Feb 15 20:50 JST
