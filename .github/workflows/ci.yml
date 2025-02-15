@@ -14,10 +14,10 @@ jobs:
 
       - name: Build GTest
         run: |
-          cd /usr/src/gtest
-          sudo cmake .
-          sudo cmake
-          sudo cp lib/*.a /usr/lib
+          cd /usr/src/googletest || cd /usr/src/gtest
+          sudo cmake -B build
+          sudo cmake --build build
+          sudo cp build/lib/libgtest*.a /usr/lib/
 
       - name: Set up CMake
         run: |
