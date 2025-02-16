@@ -15,6 +15,11 @@ TEST(ConfigParserTest, MissingFile) {
   EXPECT_THROW(config_parser.load_config("non_existent.yaml"), std::runtime_error);
 }
 
+TEST(ConfigParserTest, BadConversion) {
+    ConfigParser config_parser;
+  EXPECT_THROW(config_parser.load_config("../tests/test_config_badtypeconversion.yaml"), std::runtime_error);
+}
+
 TEST(ConfigParserTest, DefaultValues) {
   ConfigParser config_parser;
   config_parser.load_config("../tests/test_config_missing_keys.yaml");
