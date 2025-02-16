@@ -24,3 +24,13 @@ void ConfigParser::load_config(const std::string& filename) {
 }
 
 Config ConfigParser::getConfig() const { return config; }
+
+void ConfigParser::validate_config(){
+  if (config.port < 0 || 65535 < config.port){
+    throw std::runtime_error("Error: Port number out of valid range(0-65535)");
+  }
+  if (config.host.empty()){
+    throw std::runtime_error("Error: Missing required field 'host'");
+  }
+}
+

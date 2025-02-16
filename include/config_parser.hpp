@@ -16,6 +16,7 @@ class ConfigParser {
   ~ConfigParser(){};
   void load_config(const std::string& filename);
   Config getConfig() const;
+  void validate_config();
 
  private:
   Config config;

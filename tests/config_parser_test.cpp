@@ -28,6 +28,18 @@ TEST(ConfigParserTest, DefaultValues) {
   EXPECT_EQ(cfg.port, 3306);
 }
 
+TEST(ConfigParserTest, PortOutOfRange) {
+  ConfigParser config_parser;
+  config_parser.load_config("../tests/test_config_port_oor.yaml");
+  EXPECT_THROW(config_parser.validate_config(), std::runtime_error);
+}
+
+TEST(ConfigParserTest, HostEmpty) {
+  ConfigParser config_parser;
+  config_parser.load_config("../tests/test_config_host_empty.yaml");
+  EXPECT_THROW(config_parser.validate_config(), std::runtime_error);
+}
+
 int main(int argc, char** argv) {
   ::testing::InitGoogleTest(&argc, argv);
   return RUN_ALL_TESTS();
