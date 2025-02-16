@@ -9,6 +9,14 @@ struct Config{
     int port;
 };
 
-Config load_config(const std::string& filename);
+class ConfigParser{
+    public:
+        ConfigParser() {};
+        ~ConfigParser() {};
+        void load_config(const std::string& filename);
+        Config getConfig() const;
+    private:
+        Config config;
+};
 
 #endif

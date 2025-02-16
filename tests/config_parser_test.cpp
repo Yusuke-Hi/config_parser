@@ -2,17 +2,22 @@
 #include <gtest/gtest.h>
 
 TEST(ConfigParserTest, ParseValidYAML){
-    Config cfg = load_config("../tests/test_config.yaml");
+    ConfigParser config_parser;
+    config_parser.load_config("../tests/test_config.yaml");
+    Config cfg = config_parser.getConfig();
     EXPECT_EQ(cfg.host, "localhost");
     EXPECT_EQ(cfg.port, 5432);
 }
 
 TEST(ConfigParserTest, MissingFile){
-    EXPECT_THROW(load_config("non_existent.yaml"), std::runtime_error);
+    ConfigParser config_parser;
+    EXPECT_THROW( config_parser.load_config("non_existent.yaml"), std::runtime_error);
 }
 
 TEST(ConfigParserTest, DefaultValues){
-    Config cfg = load_config("../tests/test_config_missing_keys.yaml");
+    ConfigParser config_parser;
+    config_parser.load_config("../tests/test_config_missing_keys.yaml");
+    Config cfg = config_parser.getConfig();
     EXPECT_EQ(cfg.host, "127.0.0.1");
     EXPECT_EQ(cfg.port, 3306);
 }
